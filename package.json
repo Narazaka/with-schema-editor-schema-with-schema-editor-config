@@ -1,0 +1,14 @@
+{
+  "name": "with-schema-editor-schema-with-schema-editor-config",
+  "version": "0.0.1",
+  "description": "WithSchemaEditor config file schema",
+  "main": "index.js",
+  "author": "Narazaka",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "^1.10.0"
+  },
+  "dependencies": {
+    "js-yaml": "^3.4.3"
+  }
+}
