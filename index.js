@@ -20,16 +20,11 @@
         }
       ];
     },
-    read: function(file, editor) {
-      this.file = file;
-      return jsyaml.safeLoad(fs.readFileSync(file));
+    load: function(app) {
+      return app.editor().setValue(jsyaml.safeLoad(fs.readFileSync(app.target())));
     },
-    oneditor: function(editor) {
-      return editor.on('change', (function(_this) {
-        return function() {
-          return fs.writeFileSync(_this.file, jsyaml.safeDump(editor.getValue()));
-        };
-      })(this));
+    save: function(app) {
+      return fs.writeFileSync(app.target(), jsyaml.safeDump(app.editor().getValue()));
     },
     schema: function() {
       return {

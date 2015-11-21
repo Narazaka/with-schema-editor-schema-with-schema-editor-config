@@ -1,6 +1,6 @@
 {
   "name": "with-schema-editor-schema-with-schema-editor-config",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "WithSchemaEditor config file schema",
   "main": "index.js",
   "author": "Narazaka",

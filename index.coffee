@@ -9,12 +9,10 @@ module.exports =
       {name: 'JSON/YAML', extensions: ['json', 'yaml', 'yml']}
       {name: 'すべてのファイル', extensions: ['*']}
     ]
-  read: (file, editor) ->
-    @file = file
-    jsyaml.safeLoad fs.readFileSync file
-  oneditor: (editor) ->
-    editor.on 'change', =>
-      fs.writeFileSync @file, jsyaml.safeDump editor.getValue()
+  load: (app) ->
+    app.editor().setValue jsyaml.safeLoad fs.readFileSync app.target()
+  save: (app) ->
+    fs.writeFileSync app.target(), jsyaml.safeDump app.editor().getValue()
   schema: ->
     title: 'config'
     type: 'object'
